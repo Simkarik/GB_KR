@@ -23,7 +23,30 @@ void PrintMass(string[] mass)
     Console.WriteLine();
 }
 
+string[] Solution(string[] mas)
+{
+    int i = 0;
+    for (int count = 0; count < mas.Length; count++)
+    {
+        if (mas[count].Length <= 3)  {i++;} 
+    }
 
+    string[] newmas = new string[i];
+    i = 0;
+
+    for (int count = 0; count < mas.Length; count++)
+    {
+        if (mas[count].Length <= 3)  
+        {
+            newmas[i] = mas[count];
+            i++;
+        } 
+    }
+    return newmas;
+}
 
 GetMas(array);
+Console.WriteLine("Initial array:");
 PrintMass(array);
+Console.WriteLine("Changed array:");
+PrintMass(Solution(array));
